@@ -1,0 +1,146 @@
+/* reset alle styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header {
+    width: 100%;
+}
+
+.header-top {
+    background-color: white;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* Main navigation */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ff3333;
+}
+
+.header-bottom {
+    background-color: #ff3333;
+    padding: 20px 0;
+}
+
+.ticket-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ticket-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.film-dropdown {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.film-dropdown option {
+    background-color: #333;
+    color: white;
+}
+
+
+.ticket-button {
+    background-color: white;
+    color: #ff3333;
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ticket-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+
+@media (max-width: 768px) {
+    .header-top .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav ul {
+        gap: 20px;
+    }
+    
+    .ticket-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .ticket-controls {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .film-dropdown,
+    .ticket-button {
+        width: 100%;
+    }
+}
