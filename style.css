@@ -32,7 +32,8 @@ body {
 }
 
 .logo img {
-    height: 60px;
+    height: 100px;
+
     width: auto;
 }
 
@@ -53,11 +54,11 @@ body {
 }
 
 .nav-link:hover {
-    color: #ff3333;
+    color: #4596BA;
 }
 
 .header-bottom {
-    background-color: #ff3333;
+    background-color: #4596BA;
     padding: 20px 0;
 }
 
@@ -100,7 +101,7 @@ body {
 
 .ticket-button {
     background-color: white;
-    color: #ff3333;
+    color: #4596BA;
     border: none;
     padding: 12px 25px;
     font-size: 14px;

@@ -9,7 +9,6 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to AnnexBios Montfoort</h1>
         <?php include 'includes/header.php'; ?>
         
     </header>

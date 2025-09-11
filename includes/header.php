@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnnexBios Montfoort</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/png" href="../fotos/logo_hoofd.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="fotos/logo_hoofd.png">
 </head>
 <body>
     <header class="main-header">
         <div class="header-top">
             <div class="container">
                 <div class="logo">
-                    <img src="../fotos/logo_hoofd.png" alt="AnnexBios Logo">
+                    <img src="fotos/logo_hoofd.png" alt="AnnexBios Logo">
                 </div>
                 <nav class="main-nav">
                     <ul>
