@@ -6,6 +6,8 @@
     <title>AnnexBios Montfoort</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="fotos/logo_hoofd.png">
+    <link rel="icon" type="image/png" href="fotos/header_afbeelding.png">
+     <link rel="icon" type="image/png" href="fotos/maps.png">
 </head>
 <body>
     <header class="main-header">
