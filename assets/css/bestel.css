@@ -1,0 +1,115 @@
+body {
+    padding: 0%;
+    margin: 0%;
+    font-family: "Lato", sans-serif;
+}
+
+main {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.allSteps{
+    background-color: white;
+    padding: 50px;
+    margin-left: 20px;
+    width: 80%;
+
+}
+
+.step1 {
+    color: rgb(133, 133, 133);
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(133, 133, 133);
+    /* tekst in grijs */
+    margin: 20px 0;
+    /* extra ruimte tussen de rijen */
+}
+
+.ticket-row .aantal {
+    margin-left: 50px;
+    /* ruimte tussen prijs en AANTAL */
+}
+
+
+h1 {
+    color: rgb(69, 151, 186);
+}
+
+.step2{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* background-color: pink; */
+
+}
+.room {
+    align-self: center;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 528px;
+}
+
+.chair {
+    margin-top: 16px;
+    background-color: rgb(69, 150, 186);
+    width: 48px;
+    height: 48px;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    /* horizontaal centreren */
+    align-items: center;
+    transition: background-color 0.3s ease;
+    /* zorgt voor smooth effect */
+}
+
+.chair:hover:not(.selected):not(.taken) {
+    background-color: rgb(89, 170, 216);
+}
+
+
+.selected {
+    background-color: rgb(50, 125, 151);
+}
+
+
+
+.selected:hover:not(.taken) {
+    background-color: rgb(70, 145, 171);
+}
+
+.taken {
+    background-color: rgb(34, 84, 101);
+}
+
+
+
+.seat {
+    background-color: white;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+
+.colors{
+    display: flex;
+    justify-content: space-evenly;
+    width: 528px
+}
+
+.colors p{
+    padding: 10px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
