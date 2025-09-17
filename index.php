@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="fotos/Tiv.png">
 </head>
 <body>
+    <div class="background-image"></div>
     <header>
         <?php include 'includes/header.php'; ?>
     </header>
@@ -19,8 +20,8 @@
     <section class="hero">
         <div class="container">
             <h1 class="title">WELKOM BIJ ANNEXBIOS 5</h1>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient</p>
-            <button class="button">BEKIJK DE DRAAIENDE FILMS</button>
+            <p class="text">mmmmmmmmmmmmmmmmmmmmm</p>
+            <button class="button">BEKIJK DE DRAAIEnDE FILMS</button>
         </div>
     </section>
 
