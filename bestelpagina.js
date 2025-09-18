@@ -2,10 +2,11 @@ const chairs = document.querySelectorAll(".chair");
 
 chairs.forEach(chair => {
   chair.addEventListener("click", () => {
-    chair.classList.toggle("selected"); // toggle selectie visueel
+    chair.classList.toggle("selected");
 
-    const seatNumber = chair.id; // haalt de unieke stoel-id op
-
+    const row = chair.dataset.row;   
+    const seat = chair.dataset.seat; 
+    const seatNumber = row + seat;
     if (chair.classList.contains("selected")) {
       console.log(`Stoel ${seatNumber} is geselecteerd ✅`);
     } else {
@@ -13,3 +14,8 @@ chairs.forEach(chair => {
     }
   });
 });
+
+
+
+
+

@@ -2,21 +2,85 @@ body {
     padding: 0%;
     margin: 0%;
     font-family: "Lato", sans-serif;
+    background-color: black;
 }
 
 main {
     background-color: black;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin-left: 20px;
+    
 }
 
-.allSteps{
+.date {
+    display: flex;
+    flex-direction: column;
+}
+
+.datePicker {
+    /* gap: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.filmName {
+    background-color: white;
+    color: rgb(69, 151, 186);
+    padding: 15px;
+
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding: 20px;
+    background-color: white;
+}
+
+.times {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
+    padding:  20px;
+    background-color: white;
+}
+
+.toggleBtn {
+    display: flex;
+    flex-direction: column; /* regels onder elkaar */
+    align-items: center;    /* horizontaal centreren */
+    justify-content: center; /* optioneel, verticaal centreren */
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: rgb(69, 151, 186);
+    border: 2px black solid;
+    border-radius: 5%;
+    color: white;
+    font-weight: bold;
+}
+
+.toggleBtn.active {
+    background-color: rgb(50, 125, 151);
+}
+
+.toggleBtn:hover{
+    background-color: rgb(89, 170, 216);
+
+}
+
+.allSteps {
     background-color: white;
     padding: 50px;
-    margin-left: 20px;
     width: 80%;
-
 }
+
 
 .step1 {
     color: rgb(133, 133, 133);
@@ -41,14 +105,15 @@ h1 {
     color: rgb(69, 151, 186);
 }
 
-.step2{
-    display: flex;  
+.step2 {
+    display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
     /* background-color: pink; */
 
 }
+
 .room {
     align-self: center;
     /* background-color: pink; */
@@ -102,13 +167,13 @@ h1 {
 }
 
 
-.colors{
+.colors {
     display: flex;
     justify-content: space-evenly;
     width: 528px
 }
 
-.colors p{
+.colors p {
     padding: 10px;
     padding-left: 45px;
     padding-right: 45px;
