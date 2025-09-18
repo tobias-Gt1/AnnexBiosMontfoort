@@ -15,22 +15,21 @@
     .header {
       font-size: 32px;
       font-weight: bold;
-      color: #4a90e2;
-      margin: 20px;
+      color: #4596BA;
+      margin: 100px 100px 30px;
     }
 
     /* Menu balk */
     .menu {
       display: flex;
       gap: 15px;
-      margin: 0 20px 30px;
+      margin: 0 100px 30px;
     }
 
     .menu button {
       background-color: #f2f6fc;
       border: none;
       padding: 10px 20px;
-      border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
       display: flex;
@@ -40,29 +39,32 @@
     }
 
     .menu button.active {
-      background-color: #4a90e2;
-      color: white;
+      background-color: #4596BA;
+      color: black;
       box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
     }
 
+    /* Grid container */
     .cards {
-      display: none; /* verborgen standaard */
+      display: none; 
+      margin: 0 100px 30px;
       gap: 20px;
-      margin: 0 20px;
-      flex-wrap: wrap;
     }
 
     .cards.active {
-      display: flex; /* alleen actieve tab zichtbaar */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
 
+    /* Kaarten */
     .card {
       background-color: white;
       color: black;
-      width: 250px;
-      border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
     }
 
     .card img {
@@ -73,26 +75,42 @@
 
     .card .info {
       padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #333;
     }
 
     .card .info h3 {
       margin: 0 0 10px;
       font-size: 18px;
+      color: #333;;
     }
 
     .card .info p {
       font-size: 14px;
       color: #333;
+      margin: 0 0 10px;
     }
 
+    .info .release {
+      font-size: 14px;
+      font-weight: bold;
+      color: #666;
+      margin: 5px 0 10px;
+}
+
+
     .card .info button {
-      margin-top: 10px;
+      margin-top: auto;
       background-color: #4a90e2;
       border: none;
       padding: 8px 12px;
-      border-radius: 6px;
       color: white;
       cursor: pointer;
+      border-radius: 4px;
+      transition: 0.2s;
     }
 
     .card .info button:hover {
@@ -105,79 +123,135 @@
   <div class="header">FILM AGENDA</div>
 
   <div class="menu">
-    <button class="active" onclick="openTab('films')">🎬 Films</button>
-    <button onclick="openTab('week')">📅 Deze Week</button>
-    <button onclick="openTab('vandaag')">📅 Vandaag</button>
-    <button onclick="openTab('categorie')">🎭 Categorie 🔽 </button>
+    <button class="active" onclick="openTab('films')"> Films</button>
+    <button onclick="openTab('week')"> Deze Week</button>
+    <button onclick="openTab('vandaag')"> Vandaag</button>
+    <button onclick="openTab('categorie')"> Categorie 🔽 </button>
   </div>
 
-  <!-- Films -->
-  <div id="films" class="cards active">
-    <div class="card">
-      <img src="images/Jurassic world.jpg" alt="Film Poster">
-      <div class="info">
-        <h3>Film Titel 1</h3>
-        <p>Korte beschrijving van de film.</p>
-        <button>Meer info</button>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/250x350" alt="Film Poster">
-      <div class="info">
-        <h3>Film Titel 2</h3>
-        <p>Korte beschrijving van de film.</p>
-        <button>Meer info</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Deze week -->
-  <div id="week" class="cards">
-    <div class="card">
-      <img src="https://via.placeholder.com/250x350" alt="Film Poster">
-      <div class="info">
-        <h3>Week Film 1</h3>
-        <p>Film die deze week draait.</p>
-        <button>Meer info</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Vandaag -->
-  <div id="vandaag" class="cards">
-    <div class="card">
-      <img src="https://via.placeholder.com/250x350" alt="Film Poster">
-      <div class="info">
-        <h3>Vandaag Film</h3>
-        <p>Film die vandaag draait.</p>
-        <button>Meer info</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Categorie-->
-  <div id="categorie" class="cards">
-    <div class="card">
-      <img src="https://via.placeholder.com/250x350" alt="Film Poster">
-      <div class="info">
-        <h3>Actie Film</h3>
-        <p>Beschrijving van categorie film.</p>
-        <button>Meer info</button>
-      </div>
-    </div>
-  </div>
+  <!-- Containers (leeg, JS vult ze) -->
+  <div id="films" class="cards active"></div>
+  <div id="week" class="cards"></div>
+  <div id="vandaag" class="cards"></div>
+  <div id="categorie" class="cards"></div>
 
   <script>
+    // Arrays met films
+    const films = [
+    { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+    },
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 3", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 4", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 5", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 6", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 7", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "17-05-2018" 
+    },      
+    { titel: "Film Titel 8", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "17-05-2018" 
+    },      
+    { titel: "Film Titel 9", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350", 
+        release: "17-05-2018"
+    },      
+    { titel: "Film Titel 10", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "https://via.placeholder.com/250x350",
+        release: "17-05-2018" 
+    },
+    ];
+
+    const weekFilms = [
+      { titel: "Week Film 1", 
+        beschrijving: "Film die deze week draait.", 
+        poster: "https://via.placeholder.com/250x350" 
+    },
+    { titel: "Week Film 2", 
+        beschrijving: "Nog een film van deze week.", 
+        poster: "https://via.placeholder.com/250x350" 
+    }
+    ];
+
+    const vandaagFilms = [
+      { titel: "Vandaag Film 1", 
+        beschrijving: "Film die vandaag draait.", 
+        poster: "https://via.placeholder.com/250x350" 
+    }
+    ];
+
+    const categorieFilms = [
+    { titel: "Actie Film", 
+        beschrijving: "Beschrijving van een actie film.", 
+        poster: "https://via.placeholder.com/250x350" 
+    },
+    { titel: "Drama Film", 
+        beschrijving: "Beschrijving van een drama film.", 
+        poster: "https://via.placeholder.com/250x350" 
+    }
+    ];
+
+function renderCards(array, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+  array.forEach(film => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${film.poster}" alt="Film Poster">
+      <div class="info">
+        <h3>${film.titel}</h3>
+        <p class="release">Release: ${film.release}</p>
+        <p>${film.beschrijving}</p>
+        <button>Meer info & tickets</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+
+    // Tabs switchen
     function openTab(tabId) {
-      // verberg alle tabbladen
       document.querySelectorAll('.cards').forEach(el => el.classList.remove('active'));
-      // haal active class van knoppen
       document.querySelectorAll('.menu button').forEach(el => el.classList.remove('active'));
-      // toon gekozen tab
       document.getElementById(tabId).classList.add('active');
-      // highlight juiste knop
       event.target.classList.add('active');
     }
+
+    // Bij laden alles vullen
+    renderCards(films, "films");
+    renderCards(weekFilms, "week");
+    renderCards(vandaagFilms, "vandaag");
+    renderCards(categorieFilms, "categorie");
   </script>
 
 </body>
