@@ -1,0 +1,155 @@
+/* Algemene instellingen */
+body {
+  font-family: Arial, sans-serif;
+  background: #000;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #000;
+}
+
+/* Titel */
+.title {
+  background: #fff;
+  color: #2596be;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  border: 1px solid #000;
+  margin-bottom: 20px; /* ruimte onder titel */
+}
+
+/* Film sectie */
+.movie-section {
+  display: flex;
+  background: #fff;
+  border: 1px solid #000;
+  margin-bottom: 20px; /* ruimte onder filmvak */
+  gap: 30px; /*  ruimte tussen poster en details */
+}
+
+.poster {
+  flex: 1;
+}
+
+.details {
+  flex: 2;
+  padding: 15px;
+}
+
+.poster {
+  flex: 1;
+  border-right: 10px solid #000; /* dikkere zwarte lijn */
+}
+
+
+
+.poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.details {
+  flex: 2;
+  padding: 15px;
+}
+
+/* Sterren */
+.stars {
+  font-size: 30px;
+  color: #2596be;
+}
+
+/* Release info */
+.release {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Beschrijving */
+.description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Extra info */
+.extra-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Cast */
+.cast {
+  margin-top: 15px;
+}
+
+.cast-list {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.cast-list div {
+  text-align: center;
+  font-size: 12px;
+}
+
+.cast-list img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+/* Tickets */
+.ticket-section {
+  background: #2596be;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #000;
+  margin-bottom: 20px; /* ruimte onder ticketknop */
+}
+
+.ticket-button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Trailer */
+.trailer {
+  border: 3px solid #2596be; /* blue outline */
+  background: #000;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px; /* optional: rounded corners */
+}
+
+
+.trailer iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+.categories {
+  margin: 10px 0;
+}
+
+.categories img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
