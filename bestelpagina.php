@@ -142,8 +142,8 @@
                             $row = chr(64 + $j);
                             $seat = $i;
                             echo "<div class='chair' data-row='$row' data-seat='$seat'>
-                                <div class='seat'></div>
-                            </div>";
+                                    <div class='seat'></div>
+                                </div>";
                         }
                     }
                     ?>
