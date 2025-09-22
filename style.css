@@ -1,0 +1,607 @@
+/* reset alle styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c1810;
+}
+
+/* Background image class */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fotos/header_afbeelding.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.background-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    filter: brightness(0.2);
+}
+
+/* Zwarte achtergrond voor bestel pagina */
+.black-background {
+    background-color: black !important;
+}
+
+.black-background .background-image {
+    display: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header {
+    width: 100%;
+}
+
+.header-top {
+    background-color: white;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+/* Main navigatie */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #4596BA;
+}
+
+.header-bottom {
+    background-color: #4596BA;
+    padding: 20px 0;
+}
+
+.ticket-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ticket-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.film-dropdown {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.film-dropdown option {
+    background-color: #333;
+    color: white;
+}
+
+.ticket-button {
+    background-color: white;
+    color: #4596BA;
+    border: none;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ticket-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+/* Contact Sectie */
+.contact-section {
+    background-color: white;
+    padding: 0;
+    margin: 40px auto;
+    border-radius: 8px;
+    max-width: 1160px;
+    overflow: hidden;
+}
+
+.contact-content {
+    display: flex;
+    min-height: 400px;
+}
+
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-right {
+    flex: 1;
+}
+
+.map-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-info {
+    background-color: #4596BA;
+    color: white;
+    padding: 30px;
+    flex: 1;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.contact-item strong {
+    font-weight: bold;
+}
+
+.opening-hours h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.opening-hours p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.theater-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .header-top .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav ul {
+        gap: 20px;
+    }
+    
+    .ticket-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .ticket-controls {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .film-dropdown,
+    .ticket-button {
+        width: 100%;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex: none;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+}
+
+/* ====================================== */
+/* WELCOME/HERO SECTION STYLING */
+/* ====================================== */
+
+/* Hero Section */
+.hero {
+    background-color: #4596BA;
+    padding: 60px 0;
+    color: white;
+    margin: 40px auto;
+    border-radius: 8px;
+    max-width: 1160px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.button {
+    background-color: white;
+    color: #4596BA;
+    border: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Hero Sectie - Responsive hopelijk */
+@media (max-width: 768px) {
+    .title {
+        font-size: 32px;
+    }
+}
+
+/* ====================================== */
+/* booking styles */
+/* ====================================== */
+
+.center-overlay {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: -1;
+}
+
+.booking-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.booking-step {
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step-title {
+    background-color: #4596BA;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.movie-details {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.movie-poster {
+    flex-shrink: 0;
+}
+
+.movie-poster img {
+    width: 120px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.movie-ratings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.rating-12 {
+    background-color: #ff6600;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.rating-icon {
+    font-size: 18px;
+}
+
+.movie-details-info {
+    margin-bottom: 20px;
+}
+
+.movie-details-info p {
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.movie-details-info strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.total-price {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.total-price p {
+    font-size: 16px;
+    color: #333;
+}
+
+.total-price strong {
+    font-weight: bold;
+}
+
+/* Responsive ontwerpp voor booking pagina */
+@media (max-width: 768px) {
+    .booking-container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .movie-details {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .movie-poster {
+        align-self: center;
+    }
+    
+    .step-title {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+}
+
+/* ====================================== */
+/* bestel formulier 4-5 */
+/* ====================================== */
+.form-container {
+    padding: 20px;
+}
+
+.booking-form {
+    max-width: 100%;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4596BA;
+    box-shadow: 0 0 0 2px rgba(69, 150, 186, 0.2);
+}
+
+/* Payment Options Styling */
+.payment-container {
+    padding: 20px;
+}
+
+.payment-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+.payment-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.payment-label:hover {
+    background-color: #f5f5f5;
+}
+
+.payment-icon {
+    width: 40px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* Terms checkbox */
+.terms-checkbox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+.terms-checkbox label {
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Checkout button */
+.checkout-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.checkout-button {
+    background-color: #4596BA;
+    color: white;
+    border: none;
+    padding: 15px 60px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.checkout-button:hover {
+    background-color: #3a7a9a;
+    transform: translateY(-1px);
+}
+
+/* Responsive forms */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .payment-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .checkout-button {
+        width: 100%;
+        padding: 15px 20px;
+    }
+}
