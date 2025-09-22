@@ -122,6 +122,64 @@
     .card .info button:hover {
       background-color: #357ABD;
     }
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* De knop zelf */
+.dropdown-btn {
+  background-color: #f2f6fc;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Chevron-icoontje */
+.dropdown-btn .chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+
+/* Het menu (verstopt standaard) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #eee;
+}
+
+/* Als actief → zichtbaar maken */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Draai het pijltje */
+.dropdown-btn.active .chevron {
+  transform: rotate(180deg);
+}
+
+
   </style>
 </head>
 <body>
@@ -132,10 +190,18 @@
     <button class="active" onclick="openTab('films')"> Films</button>
     <button onclick="openTab('week')"> Deze Week</button>
     <button onclick="openTab('vandaag')"> Vandaag</button>
-    <button onclick="openTab('categorie')">
-  Categorie
-  <img src="images/down-chevron.png" alt="pijl omlaag" style="width:14px; height:14px;">
-</button>
+<div class="dropdown">
+  <button onclick="toggleDropdown()" class="dropdown-btn">
+    Categorie    
+    <img src="images/down-chevron.png" alt="pijl omlaag" class="chevron">
+  </button>
+  <div id="dropdown-menu" class="dropdown-content">
+    <a href="#">Actie</a>
+    <a href="#">Komedie</a>
+    <a href="#">Drama</a>
+    <a href="#">Familie</a>
+  </div>
+</div>
 
 
 
@@ -430,6 +496,25 @@ function renderCards(array, containerId) {
 }
 
 
+//Categorie dropdown knop
+function toggleDropdown() {
+  const menu = document.getElementById("dropdown-menu");
+  const btn = document.querySelector(".dropdown-btn");
+  menu.classList.toggle("show");
+  btn.classList.toggle("active");
+}
+
+// Sluit menu als je buiten klikt
+window.onclick = function(event) {
+  if (!event.target.closest('.dropdown')) {
+    document.getElementById("dropdown-menu").classList.remove("show");
+    document.querySelector(".dropdown-btn").classList.remove("active");
+  }
+}
+
+
+
+
     // Tabs switchen
     function openTab(tabId) {
       document.querySelectorAll('.cards').forEach(el => el.classList.remove('active'));
@@ -443,6 +528,12 @@ function renderCards(array, containerId) {
     renderCards(weekFilms, "week");
     renderCards(vandaagFilms, "vandaag");
     renderCards(categorieFilms, "categorie");
+
+
+
+
+
+
   </script>
 
 </body>
