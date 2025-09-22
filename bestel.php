@@ -33,8 +33,8 @@
                     </div> -->
                     
                     <div class="movie-details-info">
-                        <p><strong>Bioscoop:</strong> Hellevoetsluis (Zaal 3)</p>
-                        <p><strong>Wanneer:</strong> 11 juni 14:15</p>
+                        <p><strong>Bioscoop:</strong> Montfoort (Zaal 3)</p>
+                        <p><strong>Wanneer:</strong> 11 September 14:15</p>
                         <p><strong>Stoelen:</strong> Rij 2, stoel 7</p>
                         <p><strong>Tickets:</strong> 1x normaal</p>
                     </div>
