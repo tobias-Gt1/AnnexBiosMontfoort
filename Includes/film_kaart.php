@@ -13,10 +13,13 @@
     }
 
     .header {
-      font-size: 32px;
+      font-size: 44px;
       font-weight: bold;
       color: #4596BA;
       margin: 100px 100px 30px;
+      background-color: white;
+      width: 28%;
+   
     }
 
     /* Menu balk */
@@ -36,7 +39,10 @@
       align-items: center;
       gap: 8px;
       transition: 0.2s;
+       justify-content: space-between
     }
+
+
 
     .menu button.active {
       background-color: #4596BA;
@@ -126,7 +132,14 @@
     <button class="active" onclick="openTab('films')"> Films</button>
     <button onclick="openTab('week')"> Deze Week</button>
     <button onclick="openTab('vandaag')"> Vandaag</button>
-    <button onclick="openTab('categorie')"> Categorie 🔽 </button>
+    <button onclick="openTab('categorie')">
+  Categorie
+  <img src="images/down-chevron.png" alt="pijl omlaag" style="width:14px; height:14px;">
+</button>
+
+
+
+    
   </div>
 
   <!-- Containers (leeg, JS vult ze) -->
@@ -145,77 +158,255 @@
     },
     { titel: "DEADPOOL 2", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
+        poster: "images/deadpool 2.webp",
         release: "17-05-2018" 
     },
     { titel: "Film Titel 3", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
+        poster: "images/SOLO.jpg",
         release: "23-05-2018" 
     },
     { titel: "Film Titel 4", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
+        poster: "images/pieter.jpg",
         release: "28-03-2018" 
     },
     { titel: "Film Titel 5", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
+        poster: "images/SOLO.jpg",
         release: "17-05-2018" 
     },
     { titel: "Film Titel 6", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+        { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+    },
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
         release: "17-05-2018" 
     },
-    { titel: "Film Titel 7", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
-        release: "17-05-2018" 
-    },      
-    { titel: "Film Titel 8", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
-        release: "17-05-2018" 
-    },      
     { titel: "Film Titel 9", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350", 
-        release: "17-05-2018"
-    },      
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
     { titel: "Film Titel 10", 
         beschrijving: "Korte beschrijving van de film.", 
-        poster: "https://via.placeholder.com/250x350",
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 11", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
         release: "17-05-2018" 
     },
+    { titel: "Film Titel 12", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    }
     ];
 
-    const weekFilms = [
-      { titel: "Week Film 1", 
-        beschrijving: "Film die deze week draait.", 
-        poster: "https://via.placeholder.com/250x350" 
+
+ // Nieuw array WEEK films
+   const weekFilms = [
+   { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
     },
-    { titel: "Week Film 2", 
-        beschrijving: "Nog een film van deze week.", 
-        poster: "https://via.placeholder.com/250x350" 
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 3", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 4", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 5", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 6", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+        { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+    },
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 9", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 10", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 11", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 12", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
     }
-    ];
+];
 
-    const vandaagFilms = [
-      { titel: "Vandaag Film 1", 
-        beschrijving: "Film die vandaag draait.", 
-        poster: "https://via.placeholder.com/250x350" 
+
+// nieuw array VANDAAG films
+const vandaagFilms = [
+  { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+    },
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 3", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 4", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 5", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 6", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+        { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+    },
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 9", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 10", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 11", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 12", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
     }
-    ];
+]
 
+
+
+// nieuw array CATEGORIE films
     const categorieFilms = [
-    { titel: "Actie Film", 
-        beschrijving: "Beschrijving van een actie film.", 
-        poster: "https://via.placeholder.com/250x350" 
+   { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+        
     },
-    { titel: "Drama Film", 
-        beschrijving: "Beschrijving van een drama film.", 
-        poster: "https://via.placeholder.com/250x350" 
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 3", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 4", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 5", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 6", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+        { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
+        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
+        poster: "images/jurassic world (2).jpg",
+        release: "7-06-2018"
+    },
+    { titel: "DEADPOOL 2", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/deadpool 2.webp",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 9", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "23-05-2018" 
+    },
+    { titel: "Film Titel 10", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
+    },
+    { titel: "Film Titel 11", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/SOLO.jpg",
+        release: "17-05-2018" 
+    },
+    { titel: "Film Titel 12", 
+        beschrijving: "Korte beschrijving van de film.", 
+        poster: "images/pieter.jpg",
+        release: "28-03-2018" 
     }
     ];
 
