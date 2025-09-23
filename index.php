@@ -21,7 +21,7 @@
         <div class="container">
             <h1 class="title">WELKOM BIJ ANNEXBIOS 5</h1>
             <p class="text">mmmmmmmmmmmmmmmmmmmmm</p>
-            <button class="button">BEKIJK DE DRAAIEnDE FILMS</button>
+            <button class="button">BEKIJK DE DRAAIENDE FILMS</button>
         </div>
     </section>
 
@@ -59,5 +59,9 @@
             </div>
         </div>
     </section>
+    <?php  include "includes/film_kaart.php"?>
+    <footer>
+        <?php include 'includes/footer.html'; ?>
+    </footer>
 </body>
 </html>

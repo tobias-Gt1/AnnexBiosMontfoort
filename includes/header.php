@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="fotos/logo_hoofd.png">
     <link rel="icon" type="image/png" href="fotos/header_afbeelding.png">
-     <link rel="icon" type="image/png" href="fotos/maps.png">
+    <link rel="icon" type="image/png" href="fotos/maps.png">
 </head>
+
 <body>
     <header class="main-header">
         <div class="header-top">
@@ -25,7 +27,7 @@
                 </nav>
             </div>
         </div>
-        
+
         <div class="header-bottom">
             <div class="container">
                 <div class="ticket-section">
@@ -34,11 +36,14 @@
                         <select class="film-dropdown">
                             <option>Kies je film</option>
                         </select>
-                        <button class="ticket-button">BESTEL TICKETS</button>
+                        <a href="bestelpagina.php">
+                            <button class="ticket-button">BESTEL TICKETS</button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 </body>
+
 </html>
