@@ -23,23 +23,28 @@
     <main>
         <div class="date">
             <h1 style="background-color: white; font-size: 50px; padding: 20px">TICKETS BESTELLEN</h1>
+            <p class="filmName">FILM NAAM</p>
             <div class="datePicker">
-                <p class="filmName">FILM NAAM</p>
-                <div class="dates">
+                <div class="options">
+                    <div class="dates">
+                    </div>
+                    <div class="times">
+                        <p class="toggleBtn">9:00</p>
+                        <p class="toggleBtn">10:00</p>
+                        <p class="toggleBtn">11:00</p>
+                        <p class="toggleBtn">12:00</p>
+                        <p class="toggleBtn">13:00</p>
+                        <p class="toggleBtn">14:00</p>
+                        <p class="toggleBtn">15:00</p>
+                        <p class="toggleBtn">16:00</p>
+                    </div>
                 </div>
-                <div class="times">
-                    <p class="toggleBtn">9:00</p>
-                    <p class="toggleBtn">10:00</p>
-                    <p class="toggleBtn">11:00</p>
-                    <p class="toggleBtn">12:00</p>
-                    <p class="toggleBtn">13:00</p>
-                    <p class="toggleBtn">14:00</p>
-                    <p class="toggleBtn">15:00</p>
-                    <p class="toggleBtn">16:00</p>
+                <div class="poster">
+                    <div>poster</div>
                 </div>
             </div>
             <script>
-                const dagen = 7;
+                const dagen = 10;
                 const container = document.querySelector(".dates");
                 const vandaag = new Date();
 

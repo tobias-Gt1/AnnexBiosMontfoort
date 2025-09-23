@@ -17,13 +17,29 @@ main {
 .date {
     display: flex;
     flex-direction: column;
+    margin: 50px;
 }
 
 .datePicker {
     /* gap: 20px; */
+    background-color: yellow;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: center;
+    /* flex-wrap: nowrap; */
+}
+
+.options{
+    padding: 50px;
+    align-self: left;
+    background-color: aquamarine;
+}
+
+.poster{
+    margin-left: auto;
+    background-color: red;
+    width: 50px;
+    height: 100px;
 }
 
 .filmName {
@@ -36,19 +52,26 @@ main {
 .dates {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 50px;
+    justify-content: left;
+    gap: 10px;
     padding: 20px;
-    background-color: white;
+    /* width: 60%; */
+    /* background-color: white; */
+        background-color: orange;
+
+
 }
 
 .times {
+    background-color: purple;
     display: flex;
     flex-direction: row;
     justify-content: left;
     gap: 10px;
+        /* width: 60%; */
+
     padding:  20px;
-    background-color: white;
+    /* background-color: white; */
 }
 
 .toggleBtn {
@@ -56,9 +79,10 @@ main {
     flex-direction: column; /* regels onder elkaar */
     align-items: center;    /* horizontaal centreren */
     justify-content: center; /* optioneel, verticaal centreren */
-    padding: 20px;
+    width: 100px;
+    /* padding: 20px;
     padding-left: 50px;
-    padding-right: 50px;
+    padding-right: 50px; */
     background-color: rgb(69, 151, 186);
     border: 2px black solid;
     border-radius: 5%;
