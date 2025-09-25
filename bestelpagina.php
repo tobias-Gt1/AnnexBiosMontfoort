@@ -179,7 +179,84 @@
                 </script>
 
             </div>
-            <?php include 'bestel.php'; ?>
+            <div class="step3">
+                <h1>STAP 3: CONTROLEER JE BESTELLING</h1>
+                
+                <div class="movie-details" style="display: flex; gap: 20px; margin: 20px 0;">
+                    <div class="movie-poster" style="flex-shrink: 0;">
+                        <img src="fotos/poster-placeholder.png" alt="film poster" style="width: 120px; height: auto; border-radius: 4px;">
+                    </div>
+                    
+                    <div class="movie-info" style="flex: 1;">
+                        <h3 style="color: #333; font-size: 20px; margin-bottom: 15px;">Film Naam</h3>
+                        
+                        <div style="margin-bottom: 20px; color: rgb(133, 133, 133);">
+                            <p><strong>Bioscoop:</strong> Montfoort (Zaal 1)</p>
+                            <p><strong>Wanneer:</strong> 25 September 14:15</p>
+                            <p><strong>Stoelen:</strong> Rij A, stoel 5</p>
+                            <p><strong>Tickets:</strong> 1x normaal</p>
+                        </div>
+                        
+                        <hr style="border: 1px solid gray;">
+                        <div style="padding-top: 15px;">
+                            <p><strong>Totaal 1 ticket: €9,00</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step4">
+                <h1>STAP 4: VUL JE GEGEVENS IN</h1>
+                
+                <form class="booking-form" style="margin: 20px 0; max-width: 50%; width: 100%;">
+                    <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                        <input type="text" placeholder="Voornaam*" required style="width: 200px; padding: 12px 15px; border: 2px solid rgb(69, 151, 186); border-radius: 4px; font-size: 14px;">
+                        <input type="text" placeholder="Achternaam*" required style="width: 200px; padding: 12px 15px; border: 2px solid rgb(69, 151, 186); border-radius: 4px; font-size: 14px;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" placeholder="E-mailadres*" required style="width: 415px; padding: 12px 15px; border: 2px solid rgb(69, 151, 186); border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+                    </div>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" placeholder="Bevestig E-mailadres*" required style="width: 415px; padding: 12px 15px; border: 2px solid rgb(69, 151, 186); border-radius: 4px; font-size: 14px; box-sizing: border-box;">
+                    </div>
+                </form>
+            </div>
+
+            <div class="step5">
+                <h1>STAP 5: KIES JE BETAALWIJZE</h1>
+                
+                <div class="payment-options" style="display: flex; gap: 20px; margin: 20px 0; justify-content: flex-start;">
+                    <div style="display: flex; align-items: center;">
+                        <input type="radio" id="bancontact" name="payment" value="bancontact" style="margin-right: 8px; transform: scale(1.2);">
+                        <label for="bancontact" style="display: flex; align-items: center; cursor: pointer; padding: 8px;">
+                            <img src="fotos/NBB_logo.png" alt="Bancontact" style="width: 40px; height: 25px; object-fit: contain;">
+                        </label>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center;">
+                        <input type="radio" id="maestro" name="payment" value="maestro" style="margin-right: 8px; transform: scale(1.2);">
+                        <label for="maestro" style="display: flex; align-items: center; cursor: pointer; padding: 8px;">
+                            <img src="fotos/maestro1.png" alt="Maestro" style="width: 40px; height: 25px; object-fit: contain;">
+                        </label>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center;">
+                        <input type="radio" id="ideal" name="payment" value="ideal" style="margin-right: 8px; transform: scale(1.2);">
+                        <label for="ideal" style="display: flex; align-items: center; cursor: pointer; padding: 8px;">
+                            <img src="fotos/IDEAL_Logo.png" alt="iDEAL" style="width: 40px; height: 25px; object-fit: contain;">
+                        </label>
+                    </div>
+                </div>
+                
+                <div style="margin: 20px 0; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="terms" name="terms" required style="transform: scale(1.2);">
+                    <label for="terms" style="font-size: 14px; color: rgb(133, 133, 133); cursor: pointer;">Ik ga akkoord met de Algemene voorwaarden</label>
+                </div>
+                
+                <button type="submit" style="background-color: rgb(69, 151, 186); color: white; border: none; padding: 15px 60px; font-size: 16px; font-weight: bold; letter-spacing: 1px; border-radius: 4px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 20px;">AFREKENEN</button>
+            </div>
         </div>
     </main>
 </body>
