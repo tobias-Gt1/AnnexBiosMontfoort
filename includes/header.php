@@ -34,7 +34,10 @@
                     <h2 class="ticket-title">KOOP JE TICKETS</h2>
                     <div class="ticket-controls">
                         <select class="film-dropdown">
-                            <option>Kies je film</option>
+                            <option>Home</option>
+                            <option>Film 1</option>
+                            <option>Film 2</option>
+                            <option>Film 3</option>
                         </select>
                         <a href="bestelpagina.php">
                             <button class="ticket-button">BESTEL TICKETS</button>

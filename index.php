@@ -20,7 +20,7 @@
     <section class="hero">
         <div class="container">
             <h1 class="title">WELKOM BIJ ANNEXBIOS 5</h1>
-            <p class="text">mmmmmmmmmmmmmmmmmmmmm</p>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum recusandae nemo necessitatibus sit est eos impedit placeat facere voluptate unde. Laudantium inventore sequi tempore sed voluptatibus eum fugit vero veniam!</p>
             <button class="button">BEKIJK DE DRAAIENDE FILMS</button>
         </div>
     </section>
