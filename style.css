@@ -17,33 +17,28 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: #000000;
+    z-index: -2;
+}
+
+/* Background image voor index pagina */
+.index-page .background-image {
     background-image: url('fotos/header_afbeelding.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    z-index: -2;
 }
 
-.background-image::after {
+.index-page .background-image::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: -1;
-    filter: brightness(0.2);
-}
-
-/* Zwarte achtergrond voor bestel pagina */
-.black-background {
-    background-color: black !important;
-}
-
-.black-background .background-image {
-    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
 }
 
 .container {
@@ -52,6 +47,7 @@ body {
     padding: 0 20px;
 }
 
+/* Header styling */
 .main-header {
     width: 100%;
 }
@@ -73,7 +69,6 @@ body {
     width: auto;
 }
 
-/* Main navigatie */
 .main-nav ul {
     list-style: none;
     display: flex;
@@ -151,7 +146,49 @@ body {
     transform: translateY(-1px);
 }
 
-/* Contact Sectie */
+/* Hero Section (index pagina) */
+.hero {
+    background-color: #4596BA;
+    padding: 60px 0;
+    color: white;
+    margin: 40px auto;
+    border-radius: 8px;
+    max-width: 1160px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.button {
+    background-color: white;
+    color: #4596BA;
+    border: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Contact Sectie (index pagina) */
 .contact-section {
     background-color: white;
     padding: 0;
@@ -232,104 +269,7 @@ body {
     object-fit: cover;
 }
 
-@media (max-width: 768px) {
-    .header-top .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .main-nav ul {
-        gap: 20px;
-    }
-    
-    .ticket-section {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .ticket-controls {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-    
-    .film-dropdown,
-    .ticket-button {
-        width: 100%;
-    }
-
-    .contact-content {
-        flex-direction: column;
-    }
-
-    .contact-left,
-    .contact-right {
-        flex: none;
-    }
-
-    .map-container {
-        height: 200px;
-    }
-}
-
-/* ====================================== */
-/* WELCOME/HERO SECTION STYLING */
-/* ====================================== */
-
-/* Hero Section */
-.hero {
-    background-color: #4596BA;
-    padding: 60px 0;
-    color: white;
-    margin: 40px auto;
-    border-radius: 8px;
-    max-width: 1160px;
-}
-
-.title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-.text {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 600px;
-}
-
-.button {
-    background-color: white;
-    color: #4596BA;
-    border: none;
-    padding: 15px 30px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-2px);
-}
-
-/* Hero Sectie - Responsive hopelijk */
-@media (max-width: 768px) {
-    .title {
-        font-size: 32px;
-    }
-}
-
-/* ====================================== */
-/* booking styles */
-/* ====================================== */
-
+/* Booking styles (bestel pagina) */
 .center-overlay {
     position: fixed;
     top: 0;
@@ -337,7 +277,7 @@ body {
     transform: translateX(-50%);
     width: 900px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: white;
     z-index: -1;
 }
 
@@ -347,14 +287,6 @@ body {
     padding: 0 20px;
     position: relative;
     z-index: 1;
-}
-
-.booking-step {
-    background-color: white;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .step-title {
@@ -395,26 +327,6 @@ body {
     color: #333;
 }
 
-.movie-ratings {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.rating-12 {
-    background-color: #ff6600;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.rating-icon {
-    font-size: 18px;
-}
-
 .movie-details-info {
     margin-bottom: 20px;
 }
@@ -444,35 +356,7 @@ body {
     font-weight: bold;
 }
 
-/* Responsive ontwerpp voor booking pagina */
-@media (max-width: 768px) {
-    .booking-container {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-    
-    .movie-details {
-        flex-direction: column;
-        padding: 15px;
-    }
-    
-    .movie-poster {
-        align-self: center;
-    }
-    
-    .step-title {
-        font-size: 14px;
-        padding: 12px 15px;
-    }
-}
-
-/* ====================================== */
-/* bestel formulier 4-5 */
-/* ====================================== */
-.form-container {
-    padding: 20px;
-}
-
+/* Form stylings */
 .booking-form {
     max-width: 100%;
 }
@@ -491,7 +375,7 @@ body {
 .form-group input {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 2px solid #4596BA;
     border-radius: 4px;
     font-size: 14px;
     font-family: Arial, sans-serif;
@@ -504,11 +388,7 @@ body {
     box-shadow: 0 0 0 2px rgba(69, 150, 186, 0.2);
 }
 
-/* Payment Options Styling */
-.payment-container {
-    padding: 20px;
-}
-
+/* Payment Options */
 .payment-options {
     display: flex;
     gap: 20px;
@@ -524,6 +404,8 @@ body {
 .payment-option input[type="radio"] {
     margin-right: 8px;
     transform: scale(1.2);
+    border: 2px solid #4596BA;
+    outline: 2px solid #4596BA;
 }
 
 .payment-label {
@@ -555,6 +437,8 @@ body {
 
 .terms-checkbox input[type="checkbox"] {
     transform: scale(1.2);
+    border: 2px solid #4596BA;
+    outline: 2px solid #4596BA;
 }
 
 .terms-checkbox label {
@@ -564,11 +448,6 @@ body {
 }
 
 /* Checkout button */
-.checkout-section {
-    margin-top: 20px;
-    text-align: center;
-}
-
 .checkout-button {
     background-color: #4596BA;
     color: white;
@@ -588,8 +467,70 @@ body {
     transform: translateY(-1px);
 }
 
-/* Responsive forms */
+/* alles wat responsive is */
 @media (max-width: 768px) {
+    .header-top .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav ul {
+        gap: 20px;
+    }
+    
+    .ticket-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .ticket-controls {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .film-dropdown,
+    .ticket-button {
+        width: 100%;
+    }
+
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex: none;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+    
+    .booking-container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    
+    .movie-details {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .movie-poster {
+        align-self: center;
+    }
+    
+    .step-title {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+    
     .form-row {
         flex-direction: column;
         gap: 0;

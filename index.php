@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="fotos/maps.png">
     <link rel="icon" type="image/png" href="fotos/Tiv.png">
 </head>
-<body>
+<body class="index-page">
     <div class="background-image"></div>
     <header>
         <?php include 'includes/header.php'; ?>
