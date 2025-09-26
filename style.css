@@ -1,7 +1,7 @@
 /* Algemene instellingen */
 body {
   font-family: Arial, sans-serif;
-  background: #000;
+  background: #000000;
   margin: 0;
   padding: 0;
   color: #000;
@@ -16,22 +16,25 @@ body {
 
 /* Titel */
 .title {
-  background: #fff;
+  background: #000000;
   color: #2596be;
   padding: 15px;
   font-size: 22px;
   font-weight: bold;
   border: 1px solid #000;
-  margin-bottom: 20px; /* ruimte onder titel */
+  margin-bottom: 20px;
+  /* ruimte onder titel */
 }
 
 /* Film sectie */
 .movie-section {
   display: flex;
-  background: #fff;
+  background: #000000;
   border: 1px solid #000;
-  margin-bottom: 20px; /* ruimte onder filmvak */
-  gap: 30px; /*  ruimte tussen poster en details */
+  margin-bottom: 20px;
+  /* ruimte onder filmvak */
+  gap: 30px;
+  /*  ruimte tussen poster en details */
 }
 
 .poster {
@@ -45,16 +48,25 @@ body {
 
 .poster {
   flex: 1;
-  border-right: 10px solid #000; /* dikkere zwarte lijn */
+  border-right: 10px solid #000;
+  /* dikkere zwarte lijn */
 }
 
 
 
 .poster img {
-  width: 100%;
+  vertical-align: middle;
+  /* voorkomt dat er onderlijn-ruimte blijft */
+  max-width: 100%;
   height: auto;
-  display: block;
 }
+
+.poster {
+  line-height: 0;
+  /* verwijdert witruimte bij inline-img */
+}
+
+
 
 .details {
   flex: 2;
@@ -117,7 +129,8 @@ body {
   text-align: center;
   padding: 20px;
   border: 1px solid #000;
-  margin-bottom: 20px; /* ruimte onder ticketknop */
+  margin-bottom: 20px;
+  /* ruimte onder ticketknop */
 }
 
 .ticket-button {
@@ -129,11 +142,13 @@ body {
 
 /* Trailer */
 .trailer {
-  border: 3px solid #2596be; /* blue outline */
+  border: 3px solid #2596be;
+  /* blue outline */
   background: #000;
   padding: 10px;
   margin-bottom: 20px;
-  border-radius: 5px; /* optional: rounded corners */
+  border-radius: 5px;
+  /* optional: rounded corners */
 }
 
 
