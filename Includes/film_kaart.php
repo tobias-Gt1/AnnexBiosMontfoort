@@ -179,6 +179,27 @@
   transform: rotate(180deg);
 }
 
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 5px;
+}
+
+.star {
+  font-size: 18px;
+  color: #ccc; /* standaard leeg */
+}
+
+.star.full {
+  color: gold;
+}
+
+.star.half {
+  background: linear-gradient(90deg, gold 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
   </style>
 </head>
@@ -187,6 +208,7 @@
   <div class="header">FILM AGENDA</div>
 
   <div class="menu">
+
     <button class="active" onclick="openTab('films')"> Films</button>
     <button onclick="openTab('week')"> Deze Week</button>
     <button onclick="openTab('vandaag')"> Vandaag</button>
@@ -220,63 +242,76 @@
     { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+          rating: 4.6
+        
     },
     { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 4.5
     },
-    { titel: "Film Titel 3", 
-        beschrijving: "Korte beschrijving van de film.", 
+    { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
-    { titel: "Film Titel 4", 
-        beschrijving: "Korte beschrijving van de film.", 
+    { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
-    { titel: "Film Titel 5", 
-        beschrijving: "Korte beschrijving van de film.", 
+ { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
-    { titel: "Film Titel 6", 
-        beschrijving: "Korte beschrijving van de film.", 
+      { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
         { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+          rating: 4.6
     },
     { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 4.5 
     },
-    { titel: "Film Titel 9", 
-        beschrijving: "Korte beschrijving van de film.", 
+ { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
-    { titel: "Film Titel 10", 
-        beschrijving: "Korte beschrijving van de film.", 
+      { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
-    { titel: "Film Titel 11", 
-        beschrijving: "Korte beschrijving van de film.", 
+   { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
-    { titel: "Film Titel 12", 
-        beschrijving: "Korte beschrijving van de film.", 
+     { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    }
+        release: "28-03-2018",
+          rating: 3.2 
+    },
     ];
 
 
@@ -285,195 +320,129 @@
    { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+          rating: 4.6
+        
     },
-    { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+     { titel: "DEADPOOL 2", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 4.5
     },
-    { titel: "Film Titel 3", 
-        beschrijving: "Korte beschrijving van de film.", 
+ { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
-    { titel: "Film Titel 4", 
-        beschrijving: "Korte beschrijving van de film.", 
+    { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
-    { titel: "Film Titel 5", 
-        beschrijving: "Korte beschrijving van de film.", 
+  { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
-    { titel: "Film Titel 6", 
-        beschrijving: "Korte beschrijving van de film.", 
+     { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
         { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+          rating: 4.6
     },
     { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 4.5
     },
-    { titel: "Film Titel 9", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
-    },
-    { titel: "Film Titel 10", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    },
-    { titel: "Film Titel 11", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
-    },
-    { titel: "Film Titel 12", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    }
-];
 
+    ];
 
-// nieuw array VANDAAG films
 const vandaagFilms = [
   { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+          rating: 4.6
+        
+    },
+      { titel: "DEADPOOL 2", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
+        poster: "includes/images/deadpool 2.webp",
+        release: "17-05-2018",
+          rating: 4.5
+    },
+ { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een ‘galaxy far, far away’, dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
+        poster: "includes/images/SOLO.jpg",
+        release: "23-05-2018",
+          rating: 3.8 
+    },
+      { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter’s tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
+        poster: "includes/images/pieter.jpg",
+        release: "28-03-2018",
+          rating: 3.2 
     },
     { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 4.5
     },
-    { titel: "Film Titel 3", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
-    },
-    { titel: "Film Titel 4", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    },
-    { titel: "Film Titel 5", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
-    },
-    { titel: "Film Titel 6", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    },
-        { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
-        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
-        poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
-    },
-    { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
-    },
-    { titel: "Film Titel 9", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
-    },
-    { titel: "Film Titel 10", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    },
-    { titel: "Film Titel 11", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
-    },
-    { titel: "Film Titel 12", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    }
-]
-
-
+];
 
 // nieuw array CATEGORIE films
     const categorieFilms = [
    { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+          rating: 4.6
         
     },
     { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 4.5
     },
     { titel: "Film Titel 3", 
         beschrijving: "Korte beschrijving van de film.", 
         poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
+        release: "23-05-2018",
+          rating: 3.8 
     },
     { titel: "Film Titel 4", 
         beschrijving: "Korte beschrijving van de film.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
     { titel: "Film Titel 5", 
         beschrijving: "Korte beschrijving van de film.", 
         poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+          rating: 3.8
     },
     { titel: "Film Titel 6", 
         beschrijving: "Korte beschrijving van de film.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+          rating: 3.2 
     },
-        { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
-        beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
-        poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
-    },
-    { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
-    },
-    { titel: "Film Titel 9", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
-    },
-    { titel: "Film Titel 10", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    },
-    { titel: "Film Titel 11", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/SOLO.jpg",
-        release: "17-05-2018" 
-    },
-    { titel: "Film Titel 12", 
-        beschrijving: "Korte beschrijving van de film.", 
-        poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
-    }
+   
     ];
 
 function renderCards(array, containerId) {
@@ -486,6 +455,27 @@ function renderCards(array, containerId) {
       <img src="${film.poster}" alt="Film Poster">
       <div class="info">
         <h3>${film.titel}</h3>
+        <p class="release">Release: ${film.release}</p>
+        <p>${film.beschrijving}</p>
+        <button>Meer info & tickets</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+
+function renderCards(array, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+  array.forEach(film => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${film.poster}" alt="Film Poster">
+      <div class="info">
+        <h3>${film.titel}</h3>
+        <div class="stars">${createStars(film.rating || 0)}</div>
         <p class="release">Release: ${film.release}</p>
         <p>${film.beschrijving}</p>
         <button>Meer info & tickets</button>
@@ -530,6 +520,26 @@ window.onclick = function(event) {
     renderCards(categorieFilms, "categorie");
 
 
+function createStars(rating) {
+  const stars = [];
+  const fullStars = Math.floor(rating); // aantal volle sterren
+  const halfStar = rating % 1 >= 0.25 && rating % 1 <= 0.75; // check halve ster
+  const totalStars = 5;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push('<span class="star full">★</span>');
+  }
+
+  if (halfStar) {
+    stars.push('<span class="star half">★</span>');
+  }
+
+  while (stars.length < totalStars) {
+    stars.push('<span class="star">★</span>');
+  }
+
+  return stars.join('');
+}
 
 
 
