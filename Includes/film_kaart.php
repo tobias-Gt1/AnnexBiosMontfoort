@@ -179,6 +179,50 @@
   transform: rotate(180deg);
 }
 
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 5px;
+}
+
+.star {
+  font-size: 18px;
+  color: #ccc; /* standaard leeg */
+}
+
+.star.full {
+  color: gold;
+}
+
+.star.half {
+  background: linear-gradient(90deg, gold 50%, #ccc 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* BKF-footer styling */
+.bkf-footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.bkf-footer button {
+  background-color: #4596BA;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.bkf-footer button:hover {
+  background-color: #357ABD;
+}
 
   </style>
 </head>
@@ -220,22 +264,26 @@
     { titel: "JURRASIC WORLD: FALLEN KINGDOM", 
         beschrijving: "Welkom in Jurassic World: Fallen Kingdom! Favoriete personages keren terug in dit 3D actiespektakel.", 
         poster: "includes/images/jurassic world (2).jpg",
-        release: "7-06-2018"
+        release: "7-06-2018",
+        rating: 4.6
     },
     { titel: "DEADPOOL 2", 
-        beschrijving: "Korte beschrijving van de film.", 
+        beschrijving: "Na het overleven van een bijna fatale runder ­aanval, worstelt een misvormde cafetaria-kok (Wade Wilson) om zijn droom.", 
         poster: "includes/images/deadpool 2.webp",
-        release: "17-05-2018" 
+        release: "17-05-2018",
+        rating: 4.5 
     },
-    { titel: "Film Titel 3", 
-        beschrijving: "Korte beschrijving van de film.", 
+    { titel: "Solo: A Star Wars Story", 
+        beschrijving: "Een compleet nieuw avontuur uit een 'galaxy far, far away', dat het verhaal vertelt over het verleden van de iconische smokkelaar.", 
         poster: "includes/images/SOLO.jpg",
-        release: "23-05-2018" 
+        release: "23-05-2018",
+        rating: 3.8 
     },
-    { titel: "Film Titel 4", 
-        beschrijving: "Korte beschrijving van de film.", 
+    { titel: "Peter Rabbit", 
+        beschrijving: "Verfilming van Beatrix Potter's tijdloze verhaal over een eigenwijs konijn dat probeert de moestuin van een boer binnen te dringen.", 
         poster: "includes/images/pieter.jpg",
-        release: "28-03-2018" 
+        release: "28-03-2018",
+        rating: 3.2 
     },
     { titel: "Film Titel 5", 
         beschrijving: "Korte beschrijving van de film.", 
@@ -486,6 +534,7 @@ function renderCards(array, containerId) {
       <img src="${film.poster}" alt="Film Poster">
       <div class="info">
         <h3>${film.titel}</h3>
+        <div class="stars">${createStars(film.rating || 0)}</div>
         <p class="release">Release: ${film.release}</p>
         <p>${film.beschrijving}</p>
         <a href="detail.php?id=${index + 1}" style="text-decoration: none;">
@@ -531,12 +580,32 @@ window.onclick = function(event) {
     renderCards(vandaagFilms, "vandaag");
     renderCards(categorieFilms, "categorie");
 
+function createStars(rating) {
+  const stars = [];
+  const fullStars = Math.floor(rating); // aantal volle sterren
+  const halfStar = rating % 1 >= 0.25 && rating % 1 <= 0.75; // check halve ster
+  const totalStars = 5;
 
+  for (let i = 0; i < fullStars; i++) {
+    stars.push('<span class="star full">★</span>');
+  }
 
+  if (halfStar) {
+    stars.push('<span class="star half">★</span>');
+  }
 
+  while (stars.length < totalStars) {
+    stars.push('<span class="star">★</span>');
+  }
 
+  return stars.join('');
+}
 
   </script>
+
+<div class="bkf-footer">
+  <button onclick="openTab('films')">Bekijk alle films</button>
+</div>
 
 </body>
 </html>
