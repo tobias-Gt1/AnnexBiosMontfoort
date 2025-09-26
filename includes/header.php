@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="#" class="nav-link">FILM AGENDA</a></li>
                         <li><a href="#" class="nav-link">ALLE LOCATIES</a></li>
-                        <li><a href="#" class="nav-link">CONTACT</a></li>
+                        <li><a href="#contact-footer" class="nav-link">CONTACT</a></li>
                     </ul>
                 </nav>
             </div>

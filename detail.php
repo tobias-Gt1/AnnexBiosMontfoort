@@ -19,34 +19,34 @@ $movie = $movies[$id];
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="jeran-container">
 
     <!-- Titel -->
-    <div class="title"><?= htmlspecialchars($movie['title']) ?></div>
+    <div class="jeran-title"><?= htmlspecialchars($movie['title']) ?></div>
 
     <!-- Film sectie -->
-    <div class="movie-section">
+    <div class="jeran-movie-section">
       <!-- Poster -->
-      <div class="poster">
+      <div class="jeran-poster">
         <img src="<?= $movie['poster'] ?>" alt="Movie Poster">
       </div>
 
       <!-- Details -->
-      <div class="details">
-        <div class="stars"><?= $movie['stars'] ?></div>
+      <div class="jeran-details">
+        <div class="jeran-stars"><?= $movie['stars'] ?></div>
 
         <!-- categorie iconen -->
-        <div class="categories">
+        <div class="jeran-categories">
           <?php foreach ($movie['categories'] as $cat): ?>
             <img src="<?= $cat ?>" alt="Categorie">
           <?php endforeach; ?>
         </div>
 
-        <div class="release"><strong>Release:</strong> <?= $movie['release'] ?></div>
+        <div class="jeran-release"><strong>Release:</strong> <?= $movie['release'] ?></div>
 
-        <div class="description"><?= $movie['description'] ?></div>
+        <div class="jeran-description"><?= $movie['description'] ?></div>
 
-        <div class="extra-info">
+        <div class="jeran-extra-info">
           <p><strong>Genre:</strong> <?= $movie['genre'] ?></p>
           <p><strong>Film length:</strong> <?= $movie['length'] ?></p>
           <p><strong>Country:</strong> <?= $movie['country'] ?></p>
@@ -54,9 +54,9 @@ $movie = $movies[$id];
           <p><strong>Director:</strong> <?= $movie['director'] ?></p>
         </div>
 
-        <div class="cast">
+        <div class="jeran-cast">
           <strong>Actors:</strong>
-          <div class="cast-list">
+          <div class="jeran-cast-list">
             <?php foreach ($movie['actors'] as $actor): ?>
               <div>
                 <img src="<?= $actor['img'] ?>" alt="<?= htmlspecialchars($actor['name']) ?>">
@@ -69,12 +69,12 @@ $movie = $movies[$id];
     </div>
 
     <!-- Tickets -->
-    <div class="ticket-section">
-      <a href="#" class="ticket-button">BUY YOUR TICKETS</a>
+    <div class="jeran-ticket-section">
+      <a href="bestelpagina.php" class="jeran-ticket-button">BUY YOUR TICKETS</a>
     </div>
 
     <!-- Trailer -->
-    <div class="trailer">
+    <div class="jeran-trailer">
       <iframe src="<?= $movie['trailer'] ?>" allowfullscreen></iframe>
     </div>
 
