@@ -60,7 +60,7 @@
         </div>
     </section>
     <?php  include "includes/film_kaart.php"?>
-    <footer>
+    <footer id="contact-footer">
         <?php include 'includes/footer.html'; ?>
     </footer>
 </body>

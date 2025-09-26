@@ -438,7 +438,7 @@
 function renderCards(array, containerId) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
-  array.forEach(film => {
+  array.forEach((film, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
@@ -447,7 +447,9 @@ function renderCards(array, containerId) {
         <h3>${film.titel}</h3>
         <p class="release">Release: ${film.release}</p>
         <p>${film.beschrijving}</p>
-        <button>Meer info & tickets</button>
+        <a href="detail.php?id=${index + 1}" style="text-decoration: none;">
+          <button>Meer info & tickets</button>
+        </a>
       </div>
     `;
     container.appendChild(card);
