@@ -201,6 +201,31 @@
 }
 
 
+/* BKF-footer styling */
+.bkf-footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.bkf-footer button {
+  background-color: #4596BA;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.bkf-footer button:hover {
+  background-color: #357ABD;
+}
+
+
   </style>
 </head>
 <body>
@@ -208,6 +233,7 @@
   <div class="header">FILM AGENDA</div>
 
   <div class="menu">
+
 
     <button class="active" onclick="openTab('films')"> Films</button>
     <button onclick="openTab('week')"> Deze Week</button>
@@ -222,7 +248,8 @@
     <a href="#">Komedie</a>
     <a href="#">Drama</a>
     <a href="#">Familie</a>
-  </div>
+</div>
+
 </div>
 
 
@@ -545,6 +572,11 @@ function createStars(rating) {
 
 
   </script>
+
+<div class="bkf-footer">
+  <button onclick="openTab('films')">Bekijk alle films</button>
+</div>
+
 
 </body>
 </html>
