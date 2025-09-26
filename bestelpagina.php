@@ -1,5 +1,4 @@
 <?php
-// start de sessie
 session_start();
 ?>
 
@@ -7,53 +6,34 @@ session_start();
 include("connection.inc.php");
 
 if (isset($_POST['bestellen'])) {
-    // Tickets
-
-    // Voucher
-    // $voucher = $_POST['voucher_code'] ?? '';
-
-    // Stoelen
     $stoelen = $_POST['selectedSeats'];
     $stoelenArray = explode(",", $stoelen);
 
 
     function seatToChairId($seatString)
     {
-        $rowLetter = substr($seatString, 0, 1); // "A"
-        $seatNumber = intval(substr($seatString, 1)); // "1" → 1
-        $rowIndex = ord($rowLetter) - 64; // "A" → 1, "B" → 2, etc.
-        return ($rowIndex - 1) * 11 + $seatNumber; // jouw chair.id
+        $rowLetter = substr($seatString, 0, 1);
+        $seatNumber = intval(substr($seatString, 1)); 
+        $rowIndex = ord($rowLetter) - 64; 
+        return ($rowIndex - 1) * 11 + $seatNumber; 
     }
-
 
     $normalCount = intval($_POST['normal'] ?? 0);
     $childCount = intval($_POST['child'] ?? 0);
     $seniorCount = intval($_POST['senior'] ?? 0);
     $totalTickets = $normalCount + $childCount + $seniorCount;
-    
-    $email = "test@test.com";
-    $name = "Test";
-    $last_name = "Gebruiker";
-    // 1. Voeg reservering toe
+
+    $name = ($_POST['voornaam']);
+    $last_name = ($_POST['achternaam']);
+    $email = ($_POST['email']);
+
+
     $sql = "INSERT INTO reservation (ticket_amount, email, name, last_name) VALUES (?,?,?,?)";
     $stmt = mysqli_prepare($conn, $sql);
-    // Hier zou je echte klantgegevens moeten invoeren of uit sessie halen
+
     mysqli_stmt_bind_param($stmt, "isss", $totalTickets, $email, $name, $last_name);
     mysqli_stmt_execute($stmt);
     $reservation_id = mysqli_insert_id($conn);
-    // 2. Voeg tickets toe
-    echo " Dit is een test";
-    // echo ". $stoelenArray . ";
-    // voorbeeld uit POST
-    // echo '??????????????????????????????????????????////';
-    // var_dump($normalCount, $childCount, $seniorCount);
-    // echo '?????????---???';
-    // var_dump($stoelen);
-    // var_dump($stoelenArray);
-    // echo 'hihihi';
-    // exit;
-
-    // Voorbeeld: stoelen matchen met types
     foreach ($stoelenArray as $index => $seatString) {
         $chair_id = seatToChairId($seatString);
         $room_id = 1;
@@ -71,27 +51,10 @@ if (isset($_POST['bestellen'])) {
         mysqli_stmt_bind_param($stmt, "ssii", $reservation_id, $ticket_type, $room_id, $chair_id);
         mysqli_stmt_execute($stmt);
     }
-
-
-
-    echo "Reservering succesvol!";
+    mysqli_close($conn);
 }
 ?>
 
-
-
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-include(__DIR__ . "/connection.inc.php");
-
-if ($conn) {
-    echo "Verbinding werkt!";
-} else {
-    echo "Verbinding mislukt: " . mysqli_connect_error();
-}
-?>
 
 
 <!DOCTYPE html>
@@ -119,41 +82,10 @@ if ($conn) {
     <main>
         <?php
         include("connection.inc.php");
-
-        $sql = "SELECT id, ticket_amount, email, last_name FROM ticket ORDER BY id ASC";
-        $sql = "SELECT * FROM ticket";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            // output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="product">
-            <p>' . ($row["id"]) . ' </p>
-            <p>' . ($row["reservation_id"]) . ' </p>
-            <p>' . ($row["ticket_type"]) . ' </p>
-            <p>' . ($row["chair_id"]) . ' </p>
-            </div>';
-            }
-        } else {
-            echo "0 results";
-        }
-        echo '-------------------------';
         $takenStoelen = [];
         $sql = "SELECT chair_id FROM ticket";
         $result = mysqli_query($conn, $sql);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $takenStoelen[] = $row['chair_id'];
-                echo  '<p>' . ($row["chair_id"]) . ' </p>';
-            }
-        }
-
-        // Zet de array om naar JS
-        echo "<script>const takenSeats = " . json_encode($takenStoelen) . ";</script>";
         mysqli_close($conn);
-
-
         ?>
         <div class="date">
             <h1 style="background-color: white; font-size: 50px; padding: 20px">TICKETS BESTELLEN</h1>
@@ -235,24 +167,19 @@ if ($conn) {
                             <span style="margin-left: 50px;">AANTAL</span>
                         </span>
                     </div>
-
-
                     <hr style="border: 1px solid gray;">
-
                     <div class="ticket-row">
                         <span>Normaal</span>
                         <span>
                             <span>€9,00</span>
                             <span class="aantal"> <input name="normal" type="number" style="width: 50px;" value="0" min="0"></span>
                     </div>
-
                     <div class="ticket-row">
                         <span>Kind t/m 11 jaar</span>
                         <span>
                             <span>€5,00</span>
                             <span class="aantal"> <input name="child" type="number" style="width: 50px;" value="0" min="0"></span>
                     </div>
-
                     <div class="ticket-row">
                         <span>65 +</span>
                         <span>
@@ -260,7 +187,6 @@ if ($conn) {
                             <span class="aantal"> <input name="senior" type="number" style="width: 50px;" value="0" min="0"></span>
                         </span>
                     </div>
-
                     <hr style="border: 1px solid gray;">
                     <div style="display: flex; justify-content: space-between;">
                         <span>VOUCHERCODE</span>
@@ -272,7 +198,7 @@ if ($conn) {
                 </div>
                 <div class="step2">
                     <h1 style="margin-right: auto;">STAP 2: KIES JE STOEL</h1>
-
+                    <p><strong>Totaal tickets:</strong> <span id="totalChairs">0</span>/<span id="totalTickets">0</span></p>
                     <hr style="border: 4px solid rgb(69, 150, 186); width: 60%;">
                     <h2 style="text-align: center; color: rgb(69, 150, 186);">FILMDOEK</h2>
                     <div class="room">
@@ -291,8 +217,8 @@ if ($conn) {
                                 }
 
                                 echo "<div class='$class' data-row='$row' data-seat='$seat' data-seat-id='$currentSeat'>
-                <div class='seat'></div>
-              </div>";
+                                        <div class='seat'></div>
+                                    </div>";
                             }
                         }
                         ?>
@@ -307,7 +233,6 @@ if ($conn) {
                     <input name="selectedSeats" id="selectedSeatsInput" value="0">
 
                     <div class="rating"></div>
-                    <button type="submit" name="bestellen" id="reserveer" onclick="console.log($selectedSeats)">Reserveer</button>
                     <script>
                         const rating = 4.0; // je rating
                         const ratingContainer = document.querySelector(".rating");
@@ -328,6 +253,88 @@ if ($conn) {
                             ratingContainer.appendChild(star);
                         }
                     </script>
+                </div>
+                <div class="background-image"></div>
+
+                <!-- Centrale zwarte overlay voor bestelformulier -->
+                <div class="center-overlay"></div>
+
+                <div class="booking-container">
+                    <!-- Stap 3: Controleer je bestelling -->
+                    <h2 class="step-title">STAP 3: CONTROLEER JE BESTELLING</h2>
+
+                    <div class="movie-details">
+                        <div class="movie-poster">
+                            <img src="fotos/" alt="film poster">
+                        </div>
+
+                        <div class="movie-info">
+                            <h3 class="movie-title">Jplaceholder</h3>
+                            <div class="movie-details-info">
+                                <p><strong>Bioscoop:</strong> Montfoort (Zaal 3)</p>
+                                <p><strong>Wanneer:</strong> 11 September 14:15</p>
+                                <p><strong>Stoelen:</strong> <span id="chairCheck"></span> </p>
+                                <p><strong>Tickets:</strong> <span id="ticketCheck"></span></p>
+                            </div>
+
+                            <div class="total-price">
+                                <p><strong> Prijs: <span id="totalPrice"></span> </strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stap 4: Vul je gegevens in -->
+                    <h2 class="step-title">STAP 4: VUL JE GEGEVENS IN</h2>
+
+                    <!-- <form class="booking-form"> -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="voornaam" name="voornaam" placeholder="Voornaam*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="achternaam" name="achternaam" placeholder="Achternaam*" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mailadres*" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email-confirm" name="email-confirm" placeholder="2de E-mailadres*" required>
+                    </div>
+
+                    <!-- Stap 5: Kies je betaalwijze -->
+                    <h2 class="step-title">STAP 5: KIES JE BETAALWIJZE</h2>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="bancontact" name="payment" value="bancontact">
+                            <label for="bancontact" class="payment-label">
+                                <img src="fotos/NBB_logo.png" alt="Bancontact" class="payment-icon">
+                            </label>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="maestro" name="payment" value="maestro">
+                            <label for="maestro" class="payment-label">
+                                <img src="fotos/maestro1.png" alt="Maestro" class="payment-icon">
+                            </label>
+                        </div>
+
+                        <div class="payment-option">
+                            <input type="radio" id="ideal" name="payment" value="ideal">
+                            <label for="ideal" class="payment-label">
+                                <img src="fotos/IDEAL_Logo.png" alt="iDEAL" class="payment-icon">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">Ik ga akkoord met de Algemene voorwaarden</label>
+                    </div>
+                    <button type="submit" name="bestellen" id="reserveer" class="checkout-button">AFREKENEN</button>
                 </div>
             </div>
             <form action=""> </form>
