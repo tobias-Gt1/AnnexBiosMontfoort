@@ -689,3 +689,147 @@ body {
         padding: 15px 20px;
     }
 }
+
+/* ====================================== */
+/* JERAN'S DETAIL PAGE STYLING          */
+/* ====================================== */
+
+/* Algemene instellingen voor detail pagina */
+.jeran-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #000;
+}
+
+/* Titel */
+.jeran-title {
+  background: #000000;
+  color: #2596be;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+/* Film sectie */
+.jeran-movie-section {
+  display: flex;
+  background: #000000;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  gap: 30px;
+}
+
+.jeran-poster {
+  flex: 1;
+  border-right: 10px solid #000;
+  line-height: 0;
+}
+
+.jeran-poster img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+.jeran-details {
+  flex: 2;
+  padding: 15px;
+}
+
+/* Sterren */
+.jeran-stars {
+  font-size: 30px;
+  color: #2596be;
+}
+
+/* Categories */
+.jeran-categories {
+  margin: 10px 0;
+}
+
+.jeran-categories img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Release info */
+.jeran-release {
+  margin: 10px 0;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Beschrijving */
+.jeran-description {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Extra info */
+.jeran-extra-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Cast */
+.jeran-cast {
+  margin-top: 15px;
+  color: #fff;
+}
+
+.jeran-cast-list {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.jeran-cast-list div {
+  text-align: center;
+  font-size: 12px;
+}
+
+.jeran-cast-list img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+/* Tickets */
+.jeran-ticket-section {
+  background: #2596be;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+.jeran-ticket-button {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Trailer */
+.jeran-trailer {
+  border: 3px solid #2596be;
+  background: #000;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.jeran-trailer iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}

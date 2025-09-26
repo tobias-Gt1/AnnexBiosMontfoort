@@ -18,9 +18,9 @@ $movies = [
         ],
         "trailer" => "https://www.youtube.com/embed/y-cJuCMzpdA",
         "categories" => [
-            "assets/12klein.png",
-            "assets/spider.png",
-            "assets/vecht2.png"
+            "assets/12.png",
+            "assets/spin.png",
+            "assets/geweld.png"
         ]
     ],
 
@@ -36,14 +36,14 @@ $movies = [
         "imdb" => "7.7/10",
         "director" => "David Leitch",
         "actors" => [
-            ["name" => "Ryan Reynolds", "img" => "assets/acteur.png"],
-            ["name" => "Josh Brolin", "img" => "assets/acteur.png"],
-            ["name" => "Zazie Beetz", "img" => "assets/acteur.png"],
+            ["name" => "Ryan Reynolds", "img" => "assets/ryan.png"],
+            ["name" => "Josh Brolin", "img" => "assets/josh.png"],
+            ["name" => "Zazie Beetz", "img" => "assets/zazie.png"],
         ],
         "trailer" => "https://www.youtube.com/embed/D86RtevtfrA",
         "categories" => [
             "assets/16.png",
-            "assets/violence.png"
+            "assets/geweld.png"
         ]
     ],
 
@@ -59,13 +59,13 @@ $movies = [
         "imdb" => "6.5/10",
         "director" => "Will Gluck",
         "actors" => [
-            ["name" => "James Corden (stem)", "img" => "assets/acteur.png"],
-            ["name" => "Domhnall Gleeson", "img" => "assets/acteur.png"],
-            ["name" => "Rose Byrne", "img" => "assets/acteur.png"],
+            ["name" => "James Corden (stem)", "img" => "assets/james.png"],
+            ["name" => "Domhnall Gleeson", "img" => "assets/domhnall.png"],
+            ["name" => "Rose Byrne", "img" => "assets/rose.png"],
         ],
         "trailer" => "https://www.youtube.com/embed/7Pa_Weidt08",
         "categories" => [
-            "assets/allages.png"
+            "assets/al.png"
         ]
     ],
 
@@ -81,14 +81,14 @@ $movies = [
         "imdb" => "6.9/10",
         "director" => "Ron Howard",
         "actors" => [
-            ["name" => "Alden Ehrenreich", "img" => "assets/acteur.png"],
-            ["name" => "Donald Glover", "img" => "assets/acteur.png"],
-            ["name" => "Emilia Clarke", "img" => "assets/acteur.png"],
+            ["name" => "Alden Ehrenreich", "img" => "assets/alden.png"],
+            ["name" => "Donald Glover", "img" => "assets/donald.png"],
+            ["name" => "Emilia Clarke", "img" => "assets/emilia.png"],
         ],
         "trailer" => "https://www.youtube.com/embed/jPEYpryMp2s",
         "categories" => [
-            "assets/12klein.png",
-            "assets/action.png"
+            "assets/12.png",
+            "assets/geweld.png"
         ]
     ]
-        ];
+];
