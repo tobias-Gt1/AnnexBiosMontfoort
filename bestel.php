@@ -23,7 +23,7 @@ if (isset($_POST['bestellen'])) {
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="fotos/logo_hoofd.png">
 </head>
-<body class="bestel-page">
+<body>
     <div class="background-image"></div>
     
     <!-- Centrale overlay voor bestelformulier -->
@@ -45,7 +45,7 @@ if (isset($_POST['bestellen'])) {
         
         <div class="movie-details">
             <div class="movie-poster">
-                <img src="fotos/header_afbeelding.png" alt="film poster">
+                <img src="fotos/" alt="film poster">
             </div>
             
             <div class="movie-info">
