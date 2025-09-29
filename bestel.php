@@ -1,3 +1,19 @@
+<?php
+session_start();
+include("connection.inc.php");
+
+// Verwerk formulier als gesubmit
+if (isset($_POST['bestellen'])) {
+    $voornaam = $_POST['voornaam'];
+    $achternaam = $_POST['achternaam'];
+    $email = $_POST['email'];
+    $payment_method = $_POST['payment'];
+    
+    // Hier zou de daadwerkelijke booking processing komen
+    $success_message = "Je bestelling is succesvol geplaatst!";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +26,18 @@
 <body>
     <div class="background-image"></div>
     
-    <!-- Centrale zwarte overlay voor bestelformulier -->
+    <!-- Centrale overlay voor bestelformulier -->
     <div class="center-overlay"></div>
+    
+    <?php if (isset($success_message)): ?>
+        <div class="booking-container">
+            <div style="background: #4596BA; color: white; padding: 20px; text-align: center; border-radius: 8px; margin: 20px 0;">
+                <h2>✅ <?php echo $success_message; ?></h2>
+                <p>Je ontvangt binnenkort een bevestigingsmail.</p>
+                <a href="index.php" style="color: white; text-decoration: underline;">Terug naar home</a>
+            </div>
+        </div>
+    <?php else: ?>
     
     <div class="booking-container">
         <!-- Stap 3: Controleer je bestelling -->
@@ -47,7 +73,7 @@
         <!-- Stap 4: Vul je gegevens in -->
         <h2 class="step-title">STAP 4: VUL JE GEGEVENS IN</h2>
         
-        <form class="booking-form">
+        <form class="booking-form" method="POST" action="">
             <div class="form-row">
                 <div class="form-group">
                     <input type="text" id="voornaam" name="voornaam" placeholder="Voornaam*" required>
@@ -64,7 +90,6 @@
             <div class="form-group">
                 <input type="email" id="email-confirm" name="email-confirm" placeholder="2de E-mailadres*" required>
             </div>
-        </form>
         
         <!-- Stap 5: Kies je betaalwijze -->
         <h2 class="step-title">STAP 5: KIES JE BETAALWIJZE</h2>
@@ -92,16 +117,17 @@
             </div>
         </div>
         
-        <div class="terms-checkbox">
-            <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">Ik ga akkoord met de Algemene voorwaarden</label>
-        </div>
-        
-        <!-- Afrekenen knop -->
-        <button type="submit" class="checkout-button">AFREKENEN</button>
+            <div class="terms-checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Ik ga akkoord met de Algemene voorwaarden</label>
+            </div>
+            
+            <!-- Afrekenen knop -->
+            <button type="submit" name="bestellen" class="checkout-button">AFREKENEN</button>
+        </form>
     </div>
-
-
+    
+    <?php endif; ?>
 
 </body>
 </html>
