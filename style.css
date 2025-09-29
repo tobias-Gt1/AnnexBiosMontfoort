@@ -56,6 +56,11 @@ body {
     z-index: 1;
 }
 
+/* Background voor bestel pagina - zwart */
+.bestel-page .background-image {
+    background-color: var(--black);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

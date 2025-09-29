@@ -197,6 +197,7 @@
 .star.half {
   background: linear-gradient(90deg, gold 50%, #ccc 50%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
