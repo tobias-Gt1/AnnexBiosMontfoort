@@ -209,11 +209,10 @@ if (isset($_POST['bestellen'])) {
                                 $seat = $i;
                                 $currentSeat = (($j - 1) * 11) + $i;
 
-                                // Check of deze stoel bezet is
                                 if (in_array($currentSeat, $takenStoelen)) {
-                                    $class = "chair taken"; // stoel bezet
+                                    $class = "chair taken";
                                 } else {
-                                    $class = "chair"; // stoel vrij
+                                    $class = "chair";
                                 }
 
                                 echo "<div class='$class' data-row='$row' data-seat='$seat' data-seat-id='$currentSeat'>
